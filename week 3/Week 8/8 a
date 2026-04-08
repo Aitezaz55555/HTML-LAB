@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rotating square</title>
+    <style>
+        .animated-box{
+            width:100px;
+            height:100px;
+            background-color: red;
+            position: relative;
+            animation-name: rotatesquare;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        @keyframes rotatesquare{
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+        .content{
+            border: 1px solid black;
+            width: 350px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <h1 style="text-align: center;">css animations</h1>
+    <div class="container">
+        <div class="content">
+            <div  class="animated-box"></div>
+        </div>
+    </div>
+
+</body>
+</html>
