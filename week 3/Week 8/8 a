@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Rotating square</title>
-    <style>
-        .animated-box{
-            width:100px;
-            height:100px;
+    <head>
+        <title>Rotating square</title>
+        <style>
+            .animated-box{
+                width:100px;
+                height:100px;
             background-color: red;
             position: relative;
             animation-name: rotatesquare;
