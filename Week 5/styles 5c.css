@@ -1,0 +1,14 @@
+body
+{
+    margin: 0;
+    background-image: url('https://aeee.amrita.edu/portal/images/aee-hero-bg1.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+button:hover {
+    background-color: #555;
+    color: white;
+    font-size: larger;
+}

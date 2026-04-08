@@ -1,0 +1,84 @@
+body{
+    margin: 10px;
+    padding: 0;
+    background-color:rgb(21, 0, 21);
+    color: #111;
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 120px 50px auto 60px;
+    height: auto;
+    grid-template-areas:
+    "header header"
+    "sale sale"
+    "sidebar products"
+    "footer footer";
+    gap: 10px;
+}
+.header{
+    grid-area: header;
+    background-color: rgb(92, 10, 92);
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+.header:hover{
+    transform: scale(1.05);
+}
+.header img{
+    height:120px;
+    width:200px;
+}
+.sale{
+    grid-area: sale;
+    background-color: white;
+    transition: transform 0.3s ease;
+}
+.sale marquee{
+    font-size: large;
+    color:  whitesmoke;
+    background-color: rgb(21, 0, 21);
+}
+.sale:hover{
+    transform: scale(1.2);
+}
+.sidebar{
+    grid-area: sidebar;
+    background-color: rgb(92, 10, 92);
+    color: white;
+    transition: transform 0.3s ease;
+}   
+.sidebar:hover{
+    transform: scale(1.05);
+}
+.sidebar a{
+    text-decoration: none;
+    color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: xx-large;
+    
+}
+.sidebar a:hover{
+    color: red;
+}
+.products{
+    grid-area: products;
+    background-color: whitesmoke;
+}
+.footer{
+    grid-area: footer;
+    background-color: rgb(92, 10, 92);
+    color: whitesmoke;
+    transition: transform 0.3s ease;
+}
+.footer:hover{
+    transform: scale(1.05);
+}
+iframe{
+    width: 100%;
+    min-height: 500px;
+    margin-right: 10px;
+}

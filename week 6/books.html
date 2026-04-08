@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gadgets</title>
+    <style>
+        .container{
+            display:grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto auto auto auto;
+            gap: 10px;
+            padding: 10px;
+        }
+        .card{
+            border-radius: 10px;
+            text-align: center;
+        }
+        .card img{
+            width:350px;
+            height: 300px;
+        }
+        .card:hover{
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        button{
+            border-radius: 20px;
+            padding: 10px;
+            background-color: blue;
+        }
+        button:hover{
+            background-color: blue;
+            color: yellow;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <img src="richdadpoordad.jpg" alt="picture of a book">
+            <h4>Rich dad Poor dad</h4>
+            <p>Learn the secrets of wealth and financial success from Robert Kiyosaki.</p>
+            <p>₹499</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="Atomic habits.jpg" alt="picture of a book">
+            <h4>Atomic Habits</h4>
+            <p>An easy and proven way to build good habits and break bad ones.</p>
+            <p>₹599</p>
+            <button>Add to Cart</button>
+        </div>
+         <div class="card">
+            <img src="psycology of money.jpg" alt="picture of a book">
+            <h4>The Psychology of Money</h4>
+            <p>Understand the emotional and behavioral aspects of money and investing.</p>
+            <p>₹699</p>
+            <button>Add to Cart</button>
+        </div>
+         <div class="card">
+            <img src="TheAlchemist.jpg" alt="picture of a book">
+            <h4>The Alchemist</h4>
+            <p>Follow Santiago on his journey to find his personal legend.</p>
+            <p>₹399</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+</body>
+</html>

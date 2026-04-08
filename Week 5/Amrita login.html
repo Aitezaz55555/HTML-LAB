@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <title>Our webpage</title>  
+     <link rel="stylesheet" href="styles 5c.css">
+    </head>
+    <body>
+        <h1 style="text-align: left;">User Login</h1>
+        <form action="/login_user" method="post">
+            <table border="1" style="margin: left ;;background-color:rgb(255, 255, 255, 0.25);backdrop-filter: blur(5px);" height="200px" width="200px"> 
+                <tr>
+                    <td>Username:</td>
+                    <td><input type="text" name="username"></td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td><input type="password" name="password"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;"><input type="submit" value="Login">
+                    <input type="reset" value="Reset"></td>
+            </table>
+            <a href="amrita registration.html" style="margin-left: 20px;"><button style="background-color: rgb(227, 80, 80); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;"onclick="this.style.backgroundColor='#0056b3';this.style.transform='scale(0.95)';setTimeout(() => {this.style.transform='scale(1)';this.style.backgroundColor='#007BFF';}, 150);">Register</button></a>
+        </form>
+    </body>

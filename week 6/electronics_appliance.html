@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gadgets</title>
+    <style>
+        .container{
+            display:grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto auto auto auto;
+            gap: 10px;
+            padding: 10px;
+        }
+        .card{
+            border-radius: 10px;
+            text-align: center;
+        }
+        .card img{
+            width:350px;
+            height: 300px;
+        }
+        .card:hover{
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        button{
+            border-radius: 20px;
+            padding: 10px;
+            background-color: blue;
+        }
+        button:hover{
+            background-color: blue;
+            color: yellow;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <img src="oled tv.jpg" alt="picture of an Oled TV">
+            <h4>Oled TV</h4>
+            <p>Experience stunning visuals with our latest Oled TV technology.</p>
+            <p>₹49999</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="projector.jpg" alt="picture of a projector">
+            <h4>Projector</h4>
+            <p>Enjoy your favorite movies and shows with our high-quality projector.</p>
+            <p>₹1999</p>
+            <button>Add to Cart</button>
+        </div>
+         <div class="card">
+            <img src="monitor.jpg" alt="picture of a monitor">
+            <h4>Monitor</h4>
+            <p>Enhance your viewing experience with our high-resolution monitor.</p>
+            <p>₹199,999</p>
+            <button>Add to Cart</button>
+        </div>
+         <div class="card">
+            <img src="ironing image.jpg" alt="picture of an ironing board">
+            <h4>Ironing Board</h4>
+            <p>Keep your clothes wrinkle-free with our high-quality ironing board.</p>
+            <p>₹1,999</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+</body>
+</html>

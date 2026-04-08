@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gadgets</title>
+    <style>
+        .container{
+            display:grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto auto auto auto;
+            gap: 10px;
+            padding: 10px;
+        }
+        .card{
+            border-radius: 10px;
+            text-align: center;
+        }
+        .card:hover{
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        button{
+            border-radius: 20px;
+            padding: 10px;
+            background-color: blue;
+        }
+        button:hover{
+            background-color: blue;
+            color: yellow;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <img src="Iphone17.jpg" alt="picture of a smart mobile phone">
+            <h4>IPhone 17 Pro</h4>
+            <p>Experience the future of mobile technology with the iPhone 17 Pro.</p>
+            <p>₹1,29,999</p>
+            <p style="color: red;">15% Off</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="macbook.jpg" alt="picture of a laptop">
+            <h4>MacBook Air</h4>
+            <p>Powerful performance meets sleek design in the MacBook Air.</p>
+            <p>₹1,29,999</p>
+            <button>Add to Cart</button>
+        </div>
+         <div class="card">
+            <img src="speaker.jpg" alt="picture of a laptop">
+            <h4>Bluetooth Speaker</h4>
+            <p>Experience crystal-clear sound with the Bluetooth Speaker.</p>
+            <p>₹9,999</p>
+            <button>Add to Cart</button>
+        </div>
+         <div class="card">
+            <img src="smartwatch.jpg" alt="picture of a laptop">
+            <h4>Smart Watch</h4>
+            <p>Stay connected and track your fitness with the Smart Watch.</p>
+            <p>₹29,999</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+</body>
+</html>
