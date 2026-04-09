@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>try1</title>
+    </head>
+    <body>
+        <script>
+            let age=18;
+            if (age<18)
+            {
+                document.write("Not eligible for voting");
+
+            }
+            else if (age>18)
+            {
+                console.log("Eligible for voting")
+            }
+            else 
+            {
+                window.alert("why so eager , first get a voter id🤣🤣")
+            }
+        </script>
+        
+    </body>
+
+</html>

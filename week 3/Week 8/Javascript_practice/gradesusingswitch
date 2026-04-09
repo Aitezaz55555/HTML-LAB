@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Grades using switch</title>
+        <script>
+            let marks=95;
+            switch(true) {
+                case (marks>=90 && marks<=100):
+                    alert("Grade A, Party leda pushpa😎😎");
+                    break;
+                case (marks>=80 && marks<90):
+                    alert("Grade B");
+                    break;
+                case (marks>=70 && marks<80):
+                    alert("Grade C");
+                    break;
+                case (marks>=60 && marks<70):
+                    alert("Grade D");
+                    break;
+                default:
+                    alert("Grade F");
+            }
+        </script>
+
+    </head>
+</html>
