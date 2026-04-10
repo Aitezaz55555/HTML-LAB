@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AZ Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header class="header">
+        <h1>🛒 AZ CART</h1>
+        <p>Your Smart Shopping Destination!</p>
+    </header>
+
+    <!-- Sale Banner -->
+    <div class="sale">
+        <p>🔥 Mega Sale! Up to 50% OFF</p>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h3>Categories</h3>
+        <ul>
+            <li onclick="showCategory('electronics')">Electronics</li>
+            <li onclick="showCategory('clothing')">Clothing</li>
+            <li onclick="showCategory('home')">Home Appliances</li>
+            <li onclick="showCategory('books')">Books</li>
+        </ul>
+    </aside>
+
+    <!-- Products -->
+    <main class="products" id="products">
+        <div class="card electronics">📱 Mobile</div>
+        <div class="card electronics">💻 Laptop</div>
+        <div class="card clothing">👕 T-Shirt</div>
+        <div class="card clothing">👖 Jeans</div>
+        <div class="card home">🧊 Refrigerator</div>
+        <div class="card home">🌀 Washing Machine</div>
+        <div class="card books">📖 Novel</div>
+        <div class="card books">📚 Textbook</div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Thank you for choosing us!</p>
+    </footer>
+
+</div>
+
+<script>
+function showCategory(category) {
+    let items = document.querySelectorAll(".card");
+    items.forEach(item => {
+        item.style.display = item.classList.contains(category) ? "block" : "none";
+    });
+}
+</script>
+
+</body>
+</html>
