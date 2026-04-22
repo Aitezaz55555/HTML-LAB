@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Username Validation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #c2e9fb, #a1c4fd);
+            background-image: url("https://img.freepik.com/free-photo/clipboard-with-ribbons-candles_23-2147628613.jpg");
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            text-align: center;
+            width: 300px;
+        }
+
+        input {
+            width: 85%;
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+
+        .message {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h3>Enter Username</h3>
+
+    <input type="text" id="username" placeholder="Type username..." oninput="checkUsername()">
+
+    <div class="message" id="msg"></div>
+</div>
+
+<script>
+function checkUsername() {
+    let user = document.getElementById("username").value;
+    let msgBox = document.getElementById("msg");
+
+    if (user.length === 0) {
+        msgBox.innerHTML = "";
+    }
+    else if (user.length < 5) {
+        msgBox.innerHTML = "Username must be at least 5 characters";
+        msgBox.className = "message error";
+    }
+    else {
+        msgBox.innerHTML = "Looks good 👍";
+        msgBox.className = "message success";
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grade Calculator</title>
+
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(120deg, #89f7fe, #66a6ff);
+            background-image:url("https://img.pikbest.com/back_our/bg/20200529/bg/f5f868ad5a135_337574.png!sw800");  
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+            width: 320px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 85%;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            margin-top: 12px;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            background: #4facfe;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #3a8ee6;
+        }
+
+        .result {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>Grade Calculator</h2>
+
+    <input type="number" id="m1" placeholder="Subject 1">
+    <input type="number" id="m2" placeholder="Subject 2">
+    <input type="number" id="m3" placeholder="Subject 3">
+    <input type="number" id="m4" placeholder="Subject 4">
+    <input type="number" id="m5" placeholder="Subject 5">
+    <input type="number" id="m6" placeholder="Subject 6">
+
+    <br>
+    <button onclick="calculateGrade()">Calculate</button>
+
+    <div class="result" id="output"></div>
+</div>
+
+<script>
+function calculateGrade() {
+
+    let m1 = parseFloat(document.getElementById("m1").value);
+    let m2 = parseFloat(document.getElementById("m2").value);
+    let m3 = parseFloat(document.getElementById("m3").value);
+    let m4 = parseFloat(document.getElementById("m4").value);
+    let m5 = parseFloat(document.getElementById("m5").value);
+    let m6 = parseFloat(document.getElementById("m6").value);
+
+    // validation
+    if ([m1, m2, m3, m4, m5, m6].some(isNaN)) {
+        alert("Enter all six marks properly!");
+        return;
+    }
+
+    let avg = (m1 + m2 + m3 + m4 + m5 + m6) / 6;
+    let grade;
+
+    // grading logic
+    if (avg < 60) {
+        grade = "F";
+    } else if (avg < 70) {
+        grade = "D";
+    } else if (avg < 80) {
+        grade = "C";
+    } else if (avg < 90) {
+        grade = "B";
+    } else if (avg < 100) {
+        grade = "A";
+    } else {
+        grade = "Invalid marks";
+    }
+
+    // display on screen
+    document.getElementById("output").innerHTML =
+        "Average: " + avg.toFixed(2) + "<br>Grade: " + grade;
+}
+</script>
+
+</body>
+</html>

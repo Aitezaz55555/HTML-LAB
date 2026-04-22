@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("https://img.freepik.com/free-photo/clipboard-with-ribbons-candles_23-2147628613.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-box {
+            background: rgba(255,255,255,0.9);
+            padding: 25px;
+            border-radius: 12px;
+            width: 320px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        input {
+            width: 85%;
+            padding: 8px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 6px;
+            background: #5a67d8;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #4349b1;
+        }
+
+        .msg {
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        .error {
+            color: #d9534f;
+        }
+
+        .success {
+            color: #28a745;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="form-box">
+    <h3>Registration Form</h3>
+
+    <form onsubmit="return validateForm()">
+
+        <input type="text" id="name" placeholder="Enter Name">
+        <div id="nameMsg" class="msg"></div>
+
+        <input type="text" id="email" placeholder="Enter Email">
+        <div id="emailMsg" class="msg"></div>
+
+        <input type="password" id="password" placeholder="Enter Password">
+        <div id="passMsg" class="msg"></div>
+
+        <button type="submit">Register</button>
+
+    </form>
+</div>
+
+<script>
+function validateForm() {
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    let valid = true;
+
+    // name validation
+    if (name === "") {
+        document.getElementById("nameMsg").innerHTML = "Name cannot be empty";
+        document.getElementById("nameMsg").className = "msg error";
+        valid = false;
+    } else {
+        document.getElementById("nameMsg").innerHTML = "";
+    }
+
+    // email validation
+    let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    if (!pattern.test(email)) {
+        document.getElementById("emailMsg").innerHTML = "Invalid email format";
+        document.getElementById("emailMsg").className = "msg error";
+        valid = false;
+    } else {
+        document.getElementById("emailMsg").innerHTML = "";
+    }
+
+    // password validation
+    if (password.length < 6) {
+        document.getElementById("passMsg").innerHTML = "Password must be at least 6 characters";
+        document.getElementById("passMsg").className = "msg error";
+        valid = false;
+    } else {
+        document.getElementById("passMsg").innerHTML = "";
+    }
+
+    return valid; // form submits only if true
+}
+</script>
+
+</body>
+</html>

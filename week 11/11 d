@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Number Validation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("https://img.freepik.com/free-photo/clipboard-with-ribbons-candles_23-2147628613.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            background: rgba(255,255,255,0.9);
+            padding: 25px;
+            border-radius: 12px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+        }
+
+        input {
+            width: 85%;
+            padding: 8px;
+            margin-top: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .msg {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .error {
+            color: #d9534f;
+        }
+
+        .success {
+            color: #28a745;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h3>Enter Mobile Number</h3>
+
+    <input type="text" id="mobile" placeholder="10-digit number" onblur="validateMobile()">
+
+    <div id="message" class="msg"></div>
+</div>
+
+<script>
+function validateMobile() {
+    let num = document.getElementById("mobile").value;
+    let msg = document.getElementById("message");
+
+    // pattern: exactly 10 digits
+    let pattern = /^[0-9]{10}$/;
+
+    if (num.length === 0) {
+        msg.innerHTML = "";
+    }
+    else if (pattern.test(num)) {
+        msg.innerHTML = "Valid mobile number ✔";
+        msg.className = "msg success";
+    }
+    else {
+        msg.innerHTML = "Must be exactly 10 digits!";
+        msg.className = "msg error";
+    }
+}
+</script>
+
+</body>
+</html>

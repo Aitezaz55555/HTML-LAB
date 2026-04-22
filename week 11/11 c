@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Strength Checker</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("https://img.freepik.com/free-photo/clipboard-with-ribbons-candles_23-2147628613.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            background: rgba(255,255,255,0.9);
+            padding: 25px;
+            border-radius: 12px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+        }
+
+        input {
+            width: 85%;
+            padding: 8px;
+            margin-top: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .msg {
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .weak {
+            color: #d9534f;
+        }
+
+        .medium {
+            color: #f0ad4e;
+        }
+
+        .strong {
+            color: #28a745;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h3>Password Strength</h3>
+
+    <input type="password" id="pwd" placeholder="Enter password" oninput="checkStrength()">
+
+    <div id="result" class="msg"></div>
+</div>
+
+<script>
+function checkStrength() {
+    let pwd = document.getElementById("pwd").value;
+    let result = document.getElementById("result");
+
+    if (pwd.length === 0) {
+        result.innerHTML = "";
+        return;
+    }
+
+    // conditions
+    let hasLetter = /[a-zA-Z]/.test(pwd);
+    let hasNumber = /[0-9]/.test(pwd);
+    let hasSpecial = /[!@#$%^&*]/.test(pwd);
+
+    if (pwd.length < 6) {
+        result.innerHTML = "Weak password";
+        result.className = "msg weak";
+    }
+    else if (hasLetter && hasNumber && !hasSpecial) {
+        result.innerHTML = "Medium strength";
+        result.className = "msg medium";
+    }
+    else if (hasLetter && hasNumber && hasSpecial && pwd.length >= 8) {
+        result.innerHTML = "Strong password";
+        result.className = "msg strong";
+    }
+    else {
+        result.innerHTML = "Weak password";
+        result.className = "msg weak";
+    }
+}
+</script>
+
+</body>
+</html>

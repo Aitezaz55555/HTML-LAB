@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Odd Even Checker</title>
+
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            background: #eef2f3;
+            text-align: center;
+            padding-top: 40px;
+            background-image: url("https://png.pngtree.com/background/20210712/original/pngtree-cute-hand-drawn-style-mathematics-education-pink-plaid-background-picture-image_1176966.jpg");
+            background-size: cover;
+        }
+
+        .container {
+            background: white;
+            width: 320px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            background: #4CAF50;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #3e8e41;
+        }
+
+        .output {
+            margin-top: 15px;
+            text-align: left;
+            max-height: 200px;
+            overflow-y: auto;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background: #fafafa;
+        }
+
+        .even {
+            color: #2b7a78;
+        }
+
+        .odd {
+            color: #d1495b;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h3>Odd or Even (0–15)</h3>
+
+    <button onclick="startCheck()">Run Loop</button>
+
+    <div class="output" id="resultBox"></div>
+</div>
+
+<script>
+// separate function (makes it look different 👀)
+function checkType(num) {
+    return (num % 2 === 0) ? "even" : "odd";
+}
+
+function startCheck() {
+    let box = document.getElementById("resultBox");
+    box.innerHTML = ""; // clear previous output
+
+    for (let i = 0; i <= 15; i++) {
+
+        let type = checkType(i);
+
+        // creating elements instead of just string (different style)
+        let line = document.createElement("p");
+        line.textContent = i + " is " + type;
+
+        // adding small color variation
+        line.className = type;
+
+        box.appendChild(line);
+    }
+}
+</script>
+
+</body>
+</html>

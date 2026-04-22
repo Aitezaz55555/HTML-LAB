@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>9a</title>
+        <style>
+            body{
+                background-image: url("9abackround.png");
+                background-size: cover;
+                background-attachment: fixed;
+                background-repeat: no-repeat;
+            }
+            .container{
+                display:grid;
+                grid-template-areas:
+                "header header"
+                "frame1 frame2"
+                "frame3 frame4"
+                "frame5 frame5"
+                "footer footer";
+                grid-template-rows: auto 1fr 1fr auto;
+                grid-template-columns:1fr 1fr ;
+                gap:20px;
+            }
+            .header{
+                grid-area: header;
+                text-align: center;
+                background-color: rgba(255, 255, 255, 0.5);
+                border-radius: 10px;
+                margin-left: 40px;
+                margin-right: 50px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            }
+            .frame1{
+                grid-area:frame1;
+                background-color: rgba(255, 255, 255, 0.5);
+                max-width: 500px;
+                min-height: 100px;
+                text-align: center;
+                justify-content: center;
+                border-radius: 10px;
+                margin-left:50px ;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            }
+            .frame2{
+                grid-area:frame2;
+                background-color: rgba(255, 255, 255, 0.5);
+                max-width: 500px;
+                min-height: 100px;
+                text-align: center;
+                justify-content: center;
+                border-radius: 10px;
+                margin-left: 50px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            }
+            .frame3{
+                grid-area:frame3;
+                background-color: rgba(255, 255, 255, 0.5);
+                max-width: 500px;
+                min-height: 100px;
+                text-align: center;
+                justify-content: center;
+                border-radius: 10px;
+                margin-left: 50px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            }
+            .frame4{
+                grid-area:frame4;
+                background-color: rgba(255, 255, 255, 0.5);
+                max-width: 500px;
+                min-height: 100px;
+                text-align: center;
+                justify-content: center;
+                border-radius: 10px;
+                margin-left: 50px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            }
+            .frame5{
+                grid-area:frame5;
+                background-color: rgba(255, 255, 255, 0.5);
+                max-width: 500px;
+                min-height: 100px;
+                text-align: center;
+                justify-content: center;
+                border-radius: 10px;
+                margin-left: 350px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            }
+            .footer{
+                grid-area:footer;
+                text-align: center;
+                background-color: rgba(255, 255, 255, 0.5);
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                margin-left: 40px;
+                margin-right: 50px;
+                border-radius: 10px;
+            }
+            button{
+                margin-bottom: 10px;
+                border:none;
+                font-size: large;
+                background-color: rgba(255, 255, 255, 0.7);
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+                border-radius: 3px;;
+            }
+            button:hover{
+                background-color: rgba(248, 202, 202,0.9);
+                box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+                transform: scale(1.02)
+
+            }
+        </style>
+    </head>
+    <body>
+        <p style="color: aliceblue;">S.Aitezaz Kauser cse25051</p>
+        <script>
+            function evenodd(){
+                var x=parseInt(document.getElementById("num1").value);
+                if(x==0){
+                    return "even";
+                }
+                else if(x%2==0){
+                    return "even";  
+                }
+                else{
+                    return "odd";
+                }
+            }
+            function factorial(){
+                var x=parseInt(document.getElementById("num3").value);
+                var fac=1;
+                for(var i=1;i<=x;i++){
+                    fac*=i;
+                }
+                return fac;
+            }
+            function prime(){
+                var x=parseInt(document.getElementById("num2").value);
+                if(x<=1){
+                    return "not prime";
+                }
+                for(var i=2;i<x;i++){
+                    if(x%i==0){
+                        return "not prime";
+                    }
+                }
+                return "prime";
+            }
+            function amstrong(){
+                var x=parseInt(document.getElementById("num4").value);
+                var sum=0;
+                var amstrong=x;
+                var count=0;
+                var temp1 = x;
+                while(temp1>0){
+                    var temp=x%10;
+                    count++;
+                    temp1=parseInt(temp1/10);
+                }
+                while(amstrong>0){
+                    var temp = amstrong%10;
+                    sum+=temp**count;
+                    amstrong=parseInt(amstrong/10);
+                }
+                if(sum==x){
+                    return "armstrong";
+                }
+                else{
+                    return "not armstrong";
+                }
+            }
+            function NumberOfDigits(){
+                var x=parseInt(document.getElementById("num5").value);
+                var count=0;
+                var temp;
+                while(x>0){
+                    temp=x%10;
+                    count++;
+                    x=parseInt(x/10);
+                }
+                return count;
+            }
+        </script>
+        <div class="container">
+            <div class="header"><h1>Javascript Applications</h1></div>
+            <div class="frame1">
+                <h3>Check even or odd</h3>
+                <input type="number" id="num1">
+                <button type="button" onclick=" document.getElementById('even').innerHTML=evenodd()">even or odd</button>
+                <p id="even"></p>
+            </div>
+            <div class="frame2">
+                <h3>Check Prime or Not</h3>
+                <input type="number" id="num2">
+                <button type="button" onclick="document.getElementById('prime').innerHTML=prime()">prime or not</button>
+                <p id="prime"></p>
+            </div>
+            <div class="frame3">
+                <h3>Check factorial</h3>
+                <input type="number" id="num3">
+                <button type="button" onclick="document.getElementById('fact').innerHTML=factorial()">find factorial</button>
+                <p id="fact"></p>
+            </div>
+            <div class="frame4">
+                <h3>Check Armstrong Number</h3>
+                <input type="number" id="num4">
+                <button type="button" onclick="document.getElementById('ams').innerHTML=amstrong()">armstrong or not</button>
+                <p id="ams"></p>
+            </div>
+            <div class="frame5">
+                <h3>number of digits</h3>
+                <input type="number" id="num5">
+                <button type="button" onclick="document.getElementById('digits').innerHTML=NumberOfDigits()">number of digits</button>
+                <p id="digits"></p>
+            </div>
+            <div class="footer"><h4>copyright @ 2026 | CSE25142</h4></div>
+        </div>
+        
+
+    </body>
+</html>

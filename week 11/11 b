@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Validation Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("https://img.freepik.com/free-photo/clipboard-with-ribbons-candles_23-2147628613.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-box {
+            background: rgba(255,255,255,0.9);
+            padding: 25px;
+            border-radius: 12px;
+            width: 300px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        input {
+            width: 85%;
+            padding: 8px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 6px;
+            background: #6c63ff;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #574fd6;
+        }
+
+        .msg {
+            font-size: 13px;
+            margin-top: 6px;
+        }
+
+        .error {
+            color: #d9534f;
+        }
+
+        .success {
+            color: #28a745;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="form-box">
+    <h3>Register</h3>
+
+    <form onsubmit="return validateEmail()">
+        <input type="text" placeholder="Username" required><br>
+
+        <input type="text" id="email" placeholder="Enter Email"><br>
+        <div id="message" class="msg"></div>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script>
+function validateEmail() {
+    let email = document.getElementById("email").value;
+    let msg = document.getElementById("message");
+
+    // simple email pattern
+    let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    if (pattern.test(email)) {
+        msg.innerHTML = "Valid email ✔";
+        msg.className = "msg success";
+        return true; // allow submit
+    } else {
+        msg.innerHTML = "Invalid email format!";
+        msg.className = "msg error";
+        return false; // stop submit
+    }
+}
+</script>
+
+</body>
+</html>
